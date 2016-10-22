@@ -23,7 +23,7 @@ public class WebDriverTest {
         driver.get("https://mail.ru/");
 
 
-        WebElement gameButton = driver.findElement(By.id("g_games_events")); //1. Ссылка на "Игры" в хэдере
+        WebElement gameButton = driver.findElement(By.xpath("//a[contains(@id, 'g_games_events')]")); //1. Ссылка на "Игры" в хэдере
 
 
         WebElement gameButton2 = driver.findElement(By.name("clb683645")); //2. Ссылка на "Игры" под полем поиска
@@ -36,12 +36,12 @@ public class WebDriverTest {
         WebElement loginButton = driver.findElement(By.className("mailbox__auth__button"));
         loginButton.click();
 
-        WebElement newLetter = driver.findElement(By.linkText("Написать письмо"));//1. Кнопка "Написать письмо"
+        WebElement newLetter = driver.findElement(By.cssSelector(".b-toolbar__item a.b-toolbar__btn.js-shortcut"));//1. Кнопка "Написать письмо"
 
-        WebElement del = driver.findElement(By.cssSelector("[data-name=\"remove\"]")); //2. Кнопка "Удалить"
+        WebElement del = driver.findElement(By.cssSelector(".ico.ico_toolbar.ico_toolbar_remove")); //2. Кнопка "Удалить"
         del.click();
 
-        WebElement spam = driver.findElement(By.cssSelector("[title=\"Спам (J)\"]")); //3. Кнопка "Спам"
+        WebElement spam = driver.findElement(By.xpath("//i[@class = 'ico ico_toolbar ico_toolbar_spam']")); //3. Кнопка "Спам"
         spam.click();
 
         WebElement incomingLetters = driver.findElement(By.cssSelector(".ico.ico_folder.ico.ico_folder_inbox")); //4. Ссылка "Входящие"
