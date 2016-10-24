@@ -23,10 +23,10 @@ public class WebDriverTest {
         driver.get("https://mail.ru/");
 
 
-        WebElement gameButton = driver.findElement(By.xpath("//a[contains(@id, 'g_games_events')]")); //1. Ссылка на "Игры" в хэдере
+        WebElement gameButton = driver.findElement(By.xpath(By.linkText("Игры")); //1. Ссылка на "Игры" в хэдере
 
 
-        WebElement gameButton2 = driver.findElement(By.name("clb683645")); //2. Ссылка на "Игры" под полем поиска
+        WebElement gameButton2 = driver.findElement(By.xpath("//td[@class = 'news__tabs__item news__tabs__item_double']//a[@name = 'clb683645']")); //2. Ссылка на "Игры" под полем поиска
         gameButton2.click();
 
         WebElement usernameInput = driver.findElement(By.id("mailbox__login")); //Залогиниться seleniumtests10; 060788avavav
@@ -44,10 +44,10 @@ public class WebDriverTest {
         WebElement spam = driver.findElement(By.xpath("//i[@class = 'ico ico_toolbar ico_toolbar_spam']")); //3. Кнопка "Спам"
         spam.click();
 
-        WebElement incomingLetters = driver.findElement(By.cssSelector(".ico.ico_folder.ico.ico_folder_inbox")); //4. Ссылка "Входящие"
+        WebElement incomingLetters = driver.findElement(By.cssSelector(".b-nav__item__text.b-nav__item__text_unread")); //4. Ссылка "Входящие"
         incomingLetters.click();
 
-        WebElement sent = driver.findElement(By.cssSelector(".ico.ico_folder.ico.ico_folder_send")); //5. Ссылка "Отправленные"
+        WebElement sent = driver.findElement(By.cssSelector(By.linkText("Отправленные")); //5. Ссылка "Отправленные"
         sent.click();
 
         newLetter.click();
@@ -55,7 +55,7 @@ public class WebDriverTest {
         WebElement theme = driver.findElement(By.cssSelector(".compose-head__field>.b-input")); //1. Инпут на тему
         theme.click();
 
-        WebElement address = driver.findElement(By.cssSelector("[wrap=\"off\"][ tabindex=\"4\"]")); //2. Инпут на адресата
+        WebElement address = driver.findElement(By.cssSelector(".compose-head__field [tabindex=\"4\"]")); //2. Инпут на адресата
         address.click();
 
         WebElement foto = driver.findElement(By.cssSelector(".ico.ico_system.ico_system_camera")); //3. Ссылка на Ваше фото справа
